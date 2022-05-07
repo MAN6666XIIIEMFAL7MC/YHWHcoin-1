@@ -4,7 +4,7 @@ workflow "Build and Deploy Pages" {
 }
 
 action "Lint" {
-  uses = "guahanweb/actions/node-app@master"
+  uses = "YHWHcoin/actions/node-app@master"
   env = {
     PKG_MANAGER = "yarn"
   }
@@ -12,7 +12,7 @@ action "Lint" {
 }
 
 action "Build" {
-  uses = "guahanweb/actions/node-app@master"
+  uses = "YHWHcoin/actions/node-app@master"
   env = {
     PKG_MANAGER = "yarn"
   }
@@ -20,7 +20,7 @@ action "Build" {
 }
 
 action "Test" {
-  uses = "guahanweb/actions/node-app@master"
+  uses = "YHWHcoin/actions/node-app@master"
   env = {
     PKG_MANAGER = "yarn"
   }
@@ -28,7 +28,7 @@ action "Test" {
 }
 
 action "Deploy Pages" {
-  uses = "guahanweb/actions/node-app@master"
+  uses = "YHWHcoin/actions/node-app@master"
   secrets = ["GITHUB_TOKEN"]
   args = "gh-pages"
   needs = ["Lint", "Build", "Test"]
